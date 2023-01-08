@@ -31,7 +31,7 @@ class Program
         }
         else
         {
-            // grade = "F";
+            grade = "F";
             passing = "No";
         }
 
@@ -46,14 +46,14 @@ class Program
                 rate = "-";
             }
         }
-
+        Console.WriteLine($"Your grade is equivilant to {a} {grade}{rate}");
         if (passing == "Yes")
         {
-            Console.Write($"Congragulations, your grade is equivilant to {a} {grade}{rate}");
+            Console.Write($"Congradulations, You passed!");
         }
         else if (passing == "No")
         {
-            Console.Write("Sorry, you got an F, hope you do better next time!");
+            Console.Write("Sorry, hope you do better next time!");
         }
     }
 }
