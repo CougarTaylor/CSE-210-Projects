@@ -64,6 +64,10 @@ class Program
 
 
 
+        string name = null;     //   How to disable "Local Variable restriction for --STRINGS--
+        // Important!!  --  if you are not calculating or changing an integer, then it's fine to leave it blank
+        // when creating it, such as  " int numberx; ". 
+        // However, if you are messing with it, then you must assign a value first like this " int numberx = 0 ".
 
 
 
