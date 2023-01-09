@@ -6,7 +6,7 @@ class Program
     {
         
         Random randomGenerator = new Random();
-        int number = randomGenerator.Next(1, 11);
+        int number = randomGenerator.Next(1, 101);
         // string magicNumber = number.ToString();
 
         Console.WriteLine("\nWelcome to the Magic Number Game! \nWe've picked a magic number form 1 to 10.");
