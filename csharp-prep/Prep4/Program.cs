@@ -28,7 +28,7 @@ class Program
             }
         }
 
-        int listAverage = listSum / numCount;
+        float listAverage = listSum / numCount;
 
         Console.WriteLine($"The sum is: {listSum}");
         Console.WriteLine($"The average is: {listAverage}");
