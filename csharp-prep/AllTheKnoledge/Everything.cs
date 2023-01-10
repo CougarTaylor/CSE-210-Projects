@@ -70,18 +70,29 @@ class Program
         // However, if you are messing with it, then you must assign a value first like this " int numberx = 0 ".
 
 
+        List<int> numbers;     //   how to make lists
+        List<string> words;
+
+        List<int> numbers = new List<int>();
+        List<string> words = new List<string>();
 
 
+        "using" .System.Collections.Generic;   //     Must include collections and generic when using LISTS
+//  ignore first period above
 
+        Console.WriteLine(words.Count);    //  How to count items in a string list
 
+        foreach (string word in words)   //   How to use " for i in 'list' " python in c#
+        {
+            Console.WriteLine(word);
+        }
 
+        for (int i = 0; i < words.Count; i++)   //   Complicated way for same thing above
+        {
+            Console.WriteLine(words[i]);
+        }
 
-
-
-
-
-
-
+        words.Add("phone");   //   how to add stuff to lists
 
 
 
