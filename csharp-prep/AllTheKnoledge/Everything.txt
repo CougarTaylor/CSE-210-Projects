@@ -77,8 +77,7 @@ class Program
         List<string> words = new List<string>();
 
 
-        "using" .System.Collections.Generic;   //     Must include collections and generic when using LISTS
-//  ignore first period above
+        using System.Collections.Generic;   //     Must include collections and generic when using LISTS
 
         Console.WriteLine(words.Count);    //  How to count items in a string list
 
@@ -96,6 +95,30 @@ class Program
 
 
 
+
+        returnType FunctionName(dataType parameter1, dataType parameter2)     //   Basic body for a function
+        {                                                                     //   first name what type is returning.  'void' if nothing
+            // function_body
+        }
+
+            // an example
+        void DisplayMessage()
+        {
+            Console.WriteLine("Hello world!");
+        }
+
+            //   or even
+        void DisplayPersonalMessage(string userName)
+        {
+            Console.WriteLine($"Hello {userName}");
+        }
+
+            //   or 
+        static int AddNumbers(int first, int second)        //     Use 'static' if front until you're dealing with classes.
+        {
+            int sum = first + second;
+            return sum;
+        }
 
 
 
