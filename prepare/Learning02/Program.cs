@@ -15,7 +15,7 @@ class Program
         job2._jobTitle = "Software Engineer";
         job2._company = "Bing";
         job2._startYear = 2021;
-        job2._endYear = 2022;        
+        job2._endYear = 2022;
         job2.DisplayInfoLeak();
 
         Resume myResume = new Resume();
