@@ -5,6 +5,7 @@ class Program
     static void Main(string[] args)
     {
         string input;
+        Menu menu = new Menu();
         Journal journal = new Journal();
         FileManager fileManager = new FileManager();
         var prompts = new List<string>{"Who was the most interesting person I interacted with today?",
@@ -14,15 +15,7 @@ class Program
 
         do
         {
-            Console.WriteLine("Please select one of the following choices:");
-            Console.WriteLine("1 Write");
-            Console.WriteLine("2 Display");
-            Console.WriteLine("3 Load");
-            Console.WriteLine("4 Save");
-            Console.WriteLine("5 Quit");
-            Console.Write("What would you like to do? ");
-            input = Console.ReadLine();
-            Console.WriteLine("");
+            input = menu.DisplayMenu();
 
             if (input == "1")
             {
