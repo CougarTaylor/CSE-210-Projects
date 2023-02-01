@@ -14,10 +14,12 @@ public class FileManager
             }
         }
     }
-    public void LoadEntries()
+    public void LoadEntries(Journal journal)
     {
         string filename = "MyJournal.txt";
         string[] lines = System.IO.File.ReadAllLines(filename);
+        
+        journal.entries.Clear();
 
         foreach (string line in lines)
         {
@@ -26,9 +28,14 @@ public class FileManager
             string date = parts[0];
             string prompt = parts[1];
             string input = parts[2];
-            
-            Console.WriteLine($"Date: {date} - Prompt: {prompt}");
-            Console.WriteLine($"{input}\n");
+
+            Entry entry = new Entry();
+            entry._date = date;
+            entry._prompt = prompt;
+            entry._userInput = input;
+            journal.entries.Add(entry);
+
         }
+        Console.WriteLine($"Entries Loaded");
     }
 }

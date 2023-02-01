@@ -5,6 +5,10 @@ class Program
     static void Main(string[] args)
     {
         string input;
+        string assurance;
+        bool isDirty;
+        bool clean;
+        isDirty = false;
         Menu menu = new Menu();
         Journal journal = new Journal();
         FileManager fileManager = new FileManager();
@@ -25,6 +29,7 @@ class Program
                 entry._prompt = prompts[promptIndex];
                 entry.JournalPrompt();
                 journal.entries.Add(entry);
+                isDirty = true;
             }
             
             if (input == "2")
@@ -34,16 +39,34 @@ class Program
             
             if (input == "3")
             {
-                fileManager.LoadEntries();
+                fileManager.LoadEntries(journal);
+
             }
             if (input == "4")
             {
                 fileManager.SaveEntries(journal.entries);
                 Console.WriteLine("Your entries have been saved.");
+                isDirty = false;
+            }
+            if (input == "5")
+            {
+                if (isDirty)
+                {
+                    Console.WriteLine("You have not saved your entries, are you sure you want to quit (y/n)? ");
+                    assurance = Console.ReadLine();
+                    if (assurance == "y")
+                    {
+                        break;
+                    }
+                }
+                if (isDirty == false)
+                {
+                    break;
+                }
             }
         
             Console.WriteLine("");
         
-        } while (input != "5");
+        } while (true);
     }
 }
