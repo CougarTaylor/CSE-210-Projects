@@ -7,7 +7,6 @@ class Program
         string input;
         string assurance;
         bool isDirty;
-        bool clean;
         isDirty = false;
         Menu menu = new Menu();
         Journal journal = new Journal();
@@ -39,11 +38,15 @@ class Program
             
             if (input == "3")
             {
+                Console.WriteLine("What is the file name (add .txt at the end)?");
+                fileManager._fileName = Console.ReadLine();
                 fileManager.LoadEntries(journal);
 
             }
             if (input == "4")
             {
+                Console.WriteLine("What is the file name (add .txt at the end)?");
+                fileManager._fileName = Console.ReadLine();
                 fileManager.SaveEntries(journal.entries);
                 Console.WriteLine("Your entries have been saved.");
                 isDirty = false;

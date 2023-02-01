@@ -3,9 +3,10 @@ using System;
 
 public class FileManager
 {
+    public string _fileName;
     public void SaveEntries(List<Entry> entries)
     {
-        string fileName = "MyJournal.txt";
+        string fileName = _fileName;
         using (StreamWriter outputFile = new StreamWriter(fileName))
         {
             foreach(Entry entry in entries)
@@ -16,7 +17,7 @@ public class FileManager
     }
     public void LoadEntries(Journal journal)
     {
-        string filename = "MyJournal.txt";
+        string filename = _fileName;
         string[] lines = System.IO.File.ReadAllLines(filename);
         
         journal.entries.Clear();
