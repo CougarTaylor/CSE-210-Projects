@@ -3,7 +3,6 @@ using System;
 public class Verse
 {
     public List<Word> words = new List<Word>();
-    private string _Title;
     public int _count = 0;
     public int _maxCount = 1;
     private bool _DidGoBack = true;
@@ -12,18 +11,16 @@ public class Verse
 
     public Verse(string scripture)
     {
-        string[] FirstSplit = scripture.Split("[");
-        _Title = FirstSplit[0];
-        string[] WordArray = FirstSplit[1].Split(" ");
-        foreach (string currentWord in WordArray)
+        string[] SecondSplit = scripture.Split(" ");
+        foreach (string currentWord in SecondSplit)
         {
             words.Add(new Word(currentWord));
         }
     }
 
-    public void DisplayVerse()
+    public void DisplayVerse(string Title)
     {
-        Console.Write(_Title);
+        Console.Write(Title);
         foreach (Word word in words)
         {
             word.DisplayWord();

@@ -6,22 +6,22 @@ class Program
     {
         Console.WriteLine("Would you like a shorter or longer scripture? (s/l)?");
         string verseLength = Console.ReadLine();
-        Loader loader;
+        string scriptureText;
         RandomScripture randomScripture = new RandomScripture();
         if (verseLength == "s")
         {
-            loader = new Loader(randomScripture.GetShortScripture());
+            scriptureText = randomScripture.GetShortScripture();
         }
         else
         {
-            loader = new Loader(randomScripture.GetlongScriptures());
+            scriptureText = randomScripture.GetlongScriptures();
         }
-        Verse verse = new Verse(loader._text);
+        Scripture scripture = new Scripture(scriptureText);
         string choice = "aaa";
         while (choice.ToLower() != "quit")
         {
             Console.Clear();
-            verse.DisplayVerse();
+            scripture.DisplayVerse();
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("Press Enter to continue, type 'undo' to show the last word hidden, or 'quit' to quit: ");
@@ -29,14 +29,14 @@ class Program
             
             if (choice.ToLower() == "undo")
             {
-                verse.ShowWord();
+                scripture.ShowWord();
                 Console.WriteLine();
             }
             else if (choice == "")
             {
-                if (verse._count != verse._maxCount)
+                if (scripture._count != scripture._maxCount)
                 {
-                    verse.HideWord();
+                    scripture.HideWord();
                     Console.WriteLine();
                 }
                 else

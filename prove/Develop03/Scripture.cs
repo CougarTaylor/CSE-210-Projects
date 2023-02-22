@@ -2,30 +2,39 @@ using System;
 
 public class Scripture
 {
-    public List<Verse> verses = new List<Verse>();
-
-
-    public Scripture(List<string> verseList)
+    private string _Title;
+    public string _text;
+    public int _count = 0;
+    public int _maxCount = 1;
+    private Verse verse;
+    public Scripture(string scriptureText)
     {
-        foreach (string loader in verseList)
-        {
-            string[] VerseArray = loader.Split("[");
-            foreach (string reference in VerseArray)
-            {
-                // verses.Add(new Verse(reference)[0]);
-            }
-        }
+        string[] FirstSplit = scriptureText.Split("[");
+        _Title = FirstSplit[0];
+        _text = FirstSplit[1];
+        CreateVerse(_text);
     }
-    public void ConvertToString()
+
+    public void CreateVerse(string text)
     {
-        foreach(Verse verse in verses)
-        {
-            // Console.WriteLine($"Date: {entry._date} - Prompt: {entry._prompt}");
-            // Console.WriteLine($"{entry._userInput}\n");
-        }
+        verse = new Verse(text);
+
     }
+
+    public void DisplayVerse()
+    {
+        verse.DisplayVerse(_Title);
+    }
+
     public void HideWord()
     {
-        Console.WriteLine("pass");
+        verse.HideWord();
+        _count = verse._count;
+        _maxCount = verse._maxCount;
+    }
+    public void ShowWord()
+    {
+        verse.ShowWord();
+        _count = verse._count;
     }
 }
