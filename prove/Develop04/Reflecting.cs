@@ -32,7 +32,7 @@ public class Reflecting : Activity
     public override void SetUp()
     {
         Console.BackgroundColor = ConsoleColor.Green;
-        Console.WriteLine("Welcome to the Breathing Activity.");
+        Console.WriteLine("Welcome to the Reflecting Activity.");
         Console.WriteLine();
         Console.WriteLine("This activity will help you reflect on times in your life when you have shown strength and resilience.  This will help you recognize the power you have and how you can use it in other aspects of your life.");
         base.SetUp();
