@@ -7,14 +7,14 @@ public class Menu
     private Dictionary<string, Activity> _dictionary = new Dictionary<string, Activity>() 
     {
         {"1" , new Breathing(new MovingDot())},
-        {"2" , new Reflecting(new Stopwatch())},
+        {"2" , new Reflecting(new Spinner())},
         {"3" , new Listing(new Stopwatch())}
     };
     public void Begin()
     {
         while (true) {
             Console.BackgroundColor = ConsoleColor.DarkCyan;
-            Console.ForegroundColor = ConsoleColor.Black;
+            // Console.ForegroundColor = ConsoleColor.Black;
             Console.Clear();
             DisplayMenu();
             if (_choice == "4")
